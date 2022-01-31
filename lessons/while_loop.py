@@ -8,3 +8,15 @@ while counter < maximum:
     counter = counter + 1
 
 print("Done!")
+
+i: int = int(input("Give me number: "))
+s: str = ""
+
+while i > 0:
+    s += "h"
+    h: int = 0 
+    while h < i:
+        s += "e"
+        h += 1
+    i -= 1
+print(s)
