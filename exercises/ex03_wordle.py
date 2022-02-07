@@ -1,6 +1,6 @@
 """EX03 Structured Wordle."""
 
-__author__ = 730440093
+__author__ = "730440093"
 
 
 def contains_char(search_word: str, sing_char: str) -> bool:
@@ -48,18 +48,18 @@ def main() -> None:
     length: int = len(answer)
     i: int = 0
     turn: int = 1
-    while turn <= 6 and i < 6:
+    playing: bool = True
+    while turn <= 6 and playing is True:
         print(f"=== Turn {turn}/6 ===")
         user_guess: str = input_guess(length)
         print(emojified(user_guess, answer))
         if user_guess == answer:
             print(f"You won in {turn}/6 turns!")
-            quit()
+            playing = False
         turn += 1
         i += 1
     if turn > 6:
         print("X/6 - Sorry, try again tomorrow!")
-        quit()
 
 
 if __name__ == "__main__": 
