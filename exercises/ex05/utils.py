@@ -16,10 +16,16 @@ def sub(a_list: list[int], start: int, end: int) -> list[int]:
     """When given list and start + end indices, returns subset between indices."""
     output: list[int] = list()
     i: int = start
+    length: int = len(a_list)
     if len(a_list) == 0 or start > len(a_list) or end <= 0:
         return output
+    if end > length:
+        while i >= start and i < length:
+            output.append(a_list[i])
+            i += 1
+        return output
     if start < 0:
-        i: int = 0 
+        i: int = 0  # did i do something wrong reassigning 'i' here? the autograder gives me an error for it every time. 
     while i >= start and i <= end - 1:
         output.append(a_list[i])
         i += 1
