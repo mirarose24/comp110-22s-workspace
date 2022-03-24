@@ -3,7 +3,7 @@
 from typing import Union
 
 
-def log(info: Union[int, str]) -> None:
+def log(info: Union[int, str] = "OHNO") -> None:
     """log is a function that can be called w _either_ an int or a str arguement."""
     if isinstance(info, str):
         print(f"str: {info.lower()}")
@@ -11,5 +11,6 @@ def log(info: Union[int, str]) -> None:
         print(f"int: {info}")
 
 
+log()
 log("hello world")
 log(110)
